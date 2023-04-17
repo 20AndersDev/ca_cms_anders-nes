@@ -1,63 +1,77 @@
-import { movies } from "/JS/movies.js";
+const wpUrlAll = 'https://ca.wp-andersnes.no/wp-json/wc/store/products';
 
 const mostPopularMovies = document.querySelector('.div-mostpopular-movies');
 const divNewReleaseMovies = document.querySelector('.div-newrelease-movies');
 
-movies.forEach((movie, index) => {
-  const movieDiv = document.createElement('div');
-  movieDiv.classList.add('div-movie');
+async function getMovies() {
+  try {
+    const response = await fetch(wpUrlAll);
+    const json = await response.json();
+    console.log(json);
+    renderMovies(json);
+  } catch (error) {
+    console.log(error);
+  }
+}
 
-  const movieLink = document.createElement('a');
-  movieLink.href = `productpage.html?id=${index}`;
+function renderMovies(movies) {
+  movies.forEach((movie, index) => {
+    const movieDiv = document.createElement('div');
+    movieDiv.classList.add('div-movie');
 
-  const movieImg = document.createElement('img');
-  movieImg.src = movie.imageSrc;
-  movieImg.alt = `Movie poster - ${movie.title}`;
-  movieImg.classList.add('movie');
+    const movieLink = document.createElement('a');
+    movieLink.href = `productpage.html?id=${index}`;
 
-  const movieTitleDiv = document.createElement('div');
-  movieTitleDiv.classList.add('div-movie-title');
+    const movieImg = document.createElement('img');
+    movieImg.src = movie.imageSrc;
+    movieImg.alt = `Movie poster - ${movie.title}`;
+    movieImg.classList.add('movie');
 
-  const movieTitle = document.createElement('h2');
-  movieTitle.classList.add('movie-title');
-  movieTitle.textContent = movie.title;
+    const movieTitleDiv = document.createElement('div');
+    movieTitleDiv.classList.add('div-movie-title');
 
-  movieLink.appendChild(movieImg);
-  movieTitleDiv.appendChild(movieTitle);
+    const movieTitle = document.createElement('h2');
+    movieTitle.classList.add('movie-title');
+    movieTitle.textContent = movie.title;
 
-  movieDiv.appendChild(movieLink);
-  movieDiv.appendChild(movieTitleDiv);
+    movieLink.appendChild(movieImg);
+    movieTitleDiv.appendChild(movieTitle);
 
-  mostPopularMovies.appendChild(movieDiv);
-});
+    movieDiv.appendChild(movieLink);
+    movieDiv.appendChild(movieTitleDiv);
 
-const newReleaseMovies = movies.filter(movie => movie.newRelease).reverse();
+    mostPopularMovies.appendChild(movieDiv);
+  });
 
-newReleaseMovies.forEach((movie, index) => {
-  const movieDiv = document.createElement('div');
-  movieDiv.classList.add('div-movie');
+  const newReleaseMovies = movies.filter(movie => movie.newRelease).reverse();
 
-  const movieLink = document.createElement('a');
-  movieLink.href = `productpage.html?id=${movies.length - 1 - index}`;
+  newReleaseMovies.forEach((movie, index) => {
+    const movieDiv = document.createElement('div');
+    movieDiv.classList.add('div-movie');
 
-  const movieImg = document.createElement('img');
-  movieImg.src = movie.imageSrc;
-  movieImg.alt = `Movie poster - ${movie.title}`;
-  movieImg.classList.add('movie');
+    const movieLink = document.createElement('a');
+    movieLink.href = `productpage.html?id=${movies.length - 1 - index}`;
 
-  const movieTitleDiv = document.createElement('div');
-  movieTitleDiv.classList.add('div-movie-title');
+    const movieImg = document.createElement('img');
+    movieImg.src = movie.imageSrc;
+    movieImg.alt = `Movie poster - ${movie.title}`;
+    movieImg.classList.add('movie');
 
-  const movieTitle = document.createElement('h2');
-  movieTitle.classList.add('movie-title');
-  movieTitle.textContent = movie.title;
+    const movieTitleDiv = document.createElement('div');
+    movieTitleDiv.classList.add('div-movie-title');
 
-  movieLink.appendChild(movieImg);
-  movieTitleDiv.appendChild(movieTitle);
+    const movieTitle = document.createElement('h2');
+    movieTitle.classList.add('movie-title');
+    movieTitle.textContent = movie.title;
 
-  movieDiv.appendChild(movieLink);
-  movieDiv.appendChild(movieTitleDiv);
+    movieLink.appendChild(movieImg);
+    movieTitleDiv.appendChild(movieTitle);
 
-  divNewReleaseMovies.appendChild(movieDiv);
-});
+    movieDiv.appendChild(movieLink);
+    movieDiv.appendChild(movieTitleDiv);
 
+    divNewReleaseMovies.appendChild(movieDiv);
+  });
+}
+
+getMovies();
