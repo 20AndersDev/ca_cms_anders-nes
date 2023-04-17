@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="description" content="SquareEyes - The biggest selection of all kinds of movies ready to be watched">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=, initial-scale=1.0">
+        <link href="styles.css" rel="stylesheet">
+        <title>Square Eyes | List of Movies </title>
+        <script src="https://kit.fontawesome.com/eed746e6fc.js" crossorigin="anonymous"></script>
+        <!-- Hotjar Tracking Code for my site -->
+        <script>
+            (function(h,o,t,j,a,r){
+                h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+                h._hjSettings={hjid:3393356,hjsv:6};
+                a=o.getElementsByTagName('head')[0];
+                r=o.createElement('script');r.async=1;
+                r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+                a.appendChild(r);
+            })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+        </script>
+    </head>
+    <body>
+        <header>
+            <input type="checkbox" id="check-menu">
+            <label for="check-menu" class="nav-hamburger-menu"> <i class="fa-solid fa-bars"></i></label>
+             <a href="index.html"> <img src="images/SquareEyes_Logo.png" class="logo" alt="SquareEyes logo"></a>
+            <nav>
+                <a  href="index.html" class="nav-button">Home </a> 
+                <a href="list-of-videos.html" class="nav-button">List of Videos </a>                         
+                <a href="contact.html" class="nav-button">Contact </a>
+                <a href="about.html" class="nav-button">About </a>  
+            </nav>
+            <a href="account.html"> <i class="fa-regular fa-user" id="profil"></i></a>
+        </header> 
+        <main>
+            <div class="div-list-of-videos">
+                <div class="list-of-videos-div-h1">
+                    <h1 class="list-of-videos-h1">List of Videos</h1>
+                </div>
+                <div class="div-genre-but">
+                    <button class="but-genre"> Genre</button>
+                </div>
+                <div class="div-list">
+                    <ul class="ul-genre-menu">
+                        <li class="genre-menu-li" id="all">All Movies</li>
+                        <li class="genre-menu-li" id="action">Action</li>
+                        <li class="genre-menu-li" id="drama">Drama</li>
+                        <li class="genre-menu-li" id="comedy">Comedy</li>
+                    </ul>
+                </div>
+                <div class="list-but">
+                    
+                </div>
+            </div>
+            <div class="div-list-mov">
+                <div>
+                    <button class="list-scroll-left"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="list-scroll-right"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                <div class="div-list-of-videos-movies"></div>
+            </div>
+            <div class="div-push-footer"></div>
+
+            <script src="/JS/listofvideos.js" type="module"></script>
+            <script src="/JS/listPageScroll.JS" type="module" ></script>
+            <script src="/JS/genreBut.js"></script>
+        </main> 
+        <footer>
+            <h3> SquareEyes Copyright 2015-2022 &copy;</h3>
+        </footer> 
+    </body>
+</html>
