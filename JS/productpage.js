@@ -5,6 +5,7 @@ const productImg = document.querySelector('.movie-image');
 const productTitle = document.querySelector('.movie-title');
 const productPrice = document.querySelector('.productpage-price');
 const productDescription = document.querySelector('.movie-description');
+const checkoutButton = document.querySelector('.productpage-buybutton');
 
 async function getProduct() {
   try {
@@ -28,9 +29,22 @@ function renderProduct(product) {
 
   productTitle.textContent = product.title;
 
-  productPrice.textContent = `${product.price} ${product.currency_prefix}`;
-
+  productPrice.textContent = product.price + '$';
   productDescription.textContent = product.description;
+
+  let productDescriptionText = product.description.replace(/<\/?div>/g, '');
+  productDescription.innerHTML = productDescriptionText;
+
+  
+
+checkoutButton.addEventListener('click', () => {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id');
+  const checkoutUrl = `checkout.html?id=${id}`;
+  window.location.href = checkoutUrl;
+});
+
+
 
   productPage.appendChild(productImg);
   productPage.appendChild(productTitle);

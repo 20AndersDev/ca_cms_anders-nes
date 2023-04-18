@@ -1,15 +1,34 @@
-import { movies } from "/JS/movies.js";
+const consumerKey = "ck_fddfd5fc1ddbbbfccd7a42a14b5c1bbe170618d6";
+const secretKey = "cs_2ab09bccec3e8f72b07f393b479b8b4eeab44e34";
 
-const urlParams = new URLSearchParams(window.location.search);
-const movieId = urlParams.get('id');
+const checkoutImg = document.querySelector('.checkout-product-img');
+const checkoutTitle = document.querySelector('.checkout-p');
+const checkoutPrice = document.querySelector('.checkout-price');
 
-const movie = movies[movieId];
+async function getProduct() {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    const productUrl = `https://ca.wp-andersnes.no/wp-json/wc/v3/products/${id}?consumer_key=ck_fddfd5fc1ddbbbfccd7a42a14b5c1bbe170618d6&consumer_secret=cs_2ab09bccec3e8f72b07f393b479b8b4eeab44e34`;
+    const response = await fetch(productUrl);
+    const product = await response.json();
+    console.log(product);
+    renderProduct(product);
+  } catch (error) {
+    console.error(error);
+  }
+}
 
-const movieImg = document.querySelector('#checkout-product-img');
-movieImg.src = movie.imageSrc;
+function renderProduct(product) {
+  checkoutImg.src = product.images[0].src;
+  checkoutImg.alt = `Movie poster - ${product.title}`;
 
-const movieTitle = document.querySelector('.checkoutpage-h2');
-movieTitle.textContent = movie.title;
+  checkoutTitle.textContent = product.name;
 
-const movieDescription = document.querySelector('.checkout-p');
-movieDescription.textContent = movie.description;
+  checkoutPrice.textContent = product.price + '$';
+
+
+}
+
+// Call getProduct to render the product information
+getProduct();
