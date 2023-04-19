@@ -22,7 +22,7 @@ async function getData() {
       movieDiv.classList.add('div-movie');
   
       const movieLink = document.createElement('a');
-      movieLink.href = `productpage.html?id=${movies.length - 1 - index}`;
+      movieLink.href = `productpage.html?id=${movie.id}`;
   
       const movieImg = document.createElement('img');
       movieImg.src = movie.images[0].src;

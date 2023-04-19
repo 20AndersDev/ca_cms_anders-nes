@@ -14,15 +14,14 @@ async function getProduct() {
     const productUrl = `https://ca.wp-andersnes.no/wp-json/wc/v3/products/${id}?consumer_key=${consumerKey}&consumer_secret=${secretKey}`;
     const response = await fetch(productUrl);
     const product = await response.json();
-    console.log(product);
     renderProduct(product);
   } catch (error) {
-    console.error(error);
+    console.log(error);
   }
 }
 
 function renderProduct(product) {
-  const productPage = document.getElementById('product-page');
+  
 
   productImg.src = product.images[0].src;
   productImg.alt = `Movie poster - ${product.title}`;
@@ -36,7 +35,7 @@ function renderProduct(product) {
   productDescription.innerHTML = productDescriptionText;
 
   
-
+  const productPage = document.getElementById('product-page');
 checkoutButton.addEventListener('click', () => {
   const params = new URLSearchParams(window.location.search);
   const id = params.get('id');

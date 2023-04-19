@@ -436,7 +436,7 @@ padding: 20px;
 
 
 /* checkout page */
-.checkout-container{
+#checkout-container{
     justify-content: center;
     background-color: #1A0F3F;
     padding-bottom: 50px;
@@ -460,12 +460,15 @@ padding: 20px;
 
 .checkoutpage-h2{
     text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 .checkout-p{
     width: 100%;
-    max-width: 300px;
-}
+    text-align: center;
+    font-size: 25px;
+ }
 
 .checkout-div-productinfo{
     display: flex;

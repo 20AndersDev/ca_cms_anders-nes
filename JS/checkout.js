@@ -12,10 +12,9 @@ async function getProduct() {
     const productUrl = `https://ca.wp-andersnes.no/wp-json/wc/v3/products/${id}?consumer_key=ck_fddfd5fc1ddbbbfccd7a42a14b5c1bbe170618d6&consumer_secret=cs_2ab09bccec3e8f72b07f393b479b8b4eeab44e34`;
     const response = await fetch(productUrl);
     const product = await response.json();
-    console.log(product);
     renderProduct(product);
   } catch (error) {
-    console.error(error);
+    console.log(error);
   }
 }
 
