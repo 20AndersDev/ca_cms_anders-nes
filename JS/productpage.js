@@ -43,12 +43,6 @@ checkoutButton.addEventListener('click', () => {
   window.location.href = checkoutUrl;
 });
 
-
-
-  productPage.appendChild(productImg);
-  productPage.appendChild(productTitle);
-  productPage.appendChild(productPrice);
-  productPage.appendChild(productDescription);
 }
 
 getProduct();

@@ -7,7 +7,6 @@ async function getMovies() {
   try {
     const response = await fetch(wpUrlAll);
     const json = await response.json();
-    console.log(json);
     renderMovies(json);
   } catch (error) {
     console.log(error);

@@ -29,5 +29,4 @@ function renderProduct(product) {
 
 }
 
-// Call getProduct to render the product information
 getProduct();
