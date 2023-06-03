@@ -50,8 +50,9 @@ This is a school project so no contributions are accepted.
 
 ## Contact
 
-[My LinkedIn page](https://www.linkedin.com/feed/)
-Email: anders.nes98@gmail.com
+[- My LinkedIn page](https://www.linkedin.com/feed/)
+
+- Email: anders.nes98@gmail.com
 
 ## Acknowledgments
 
