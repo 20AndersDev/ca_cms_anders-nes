@@ -2,7 +2,7 @@
 
 SquareEyes - Cross Course Project
 
-![image](Images/cross-course-project.png)
+![image](Images/cross-course-projectimage.png)
 
 ## Description
 
