@@ -7,7 +7,7 @@
 SquareEyes was a cross course project during my first year at noroff.
 The cross course project task was to create a website for users to purchase movies and critera was that it nedded to be responsive,follow wcag guidelines and be targeted to the right audience.
 
-The website consists of thes pages:
+The website consists of these pages:
 
 - index.html (home page)
 - list-of-videos.html (lists all the available movies)
@@ -23,7 +23,7 @@ The website consists of thes pages:
 - [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 - [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-- Domain is hosted on one.com and wordpress for the API hosting. Wordpress is setup as headless mode iwth all the movies hosted inthe API.
+- Domain is hosted on one.com and wordpress for the API hosting. Wordpress is setup as headless mode with all the movies hosted in the API.
 
 ## Getting Started
 
@@ -41,7 +41,7 @@ No need to install any dependencies for this project. Project consists of only H
 
 ### Running
 
-Project is hosted on https://silver-paletas-12f479.netlify.app/index.html.
+Project is hosted on netlify:  https://silver-paletas-12f479.netlify.app/index.html.
 When repo is cloned you can use liverserver extension to have the website hosted locally on your computer.
 
 ## Contributing
@@ -51,7 +51,7 @@ This is a school project so no contributions are accepted.
 ## Contact
 
 [My LinkedIn page](https://www.linkedin.com/feed/)
-[Email](anders.nes98@gmail.com)
+Email: anders.nes98@gmail.com
 
 ## Acknowledgments
 
