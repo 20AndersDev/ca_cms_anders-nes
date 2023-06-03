@@ -1,6 +1,4 @@
-# Your project title
-
-SquareEyes - Cross Course Project
+# SquareEyes - Cross Course Project
 
 ![image](Images/cross-course-projectimage.png)
 
@@ -31,8 +29,6 @@ The website consists of thes pages:
 
 ### Installing
 
-This is where you list how to get the project started. It typically just includes telling a person to clone the repo and then to install the dependencies e.g.
-
 1. Clone the repo:
 
 ```bash
@@ -53,8 +49,6 @@ When repo is cloned you can use liverserver extension to have the website hosted
 This is a school project so no contributions are accepted.
 
 ## Contact
-
-This is where you can leave your social links for people to contact you, such as a LinkedIn profile or Twitter link e.g.
 
 [My LinkedIn page](https://www.linkedin.com/feed/)
 [Email](anders.nes98@gmail.com)
